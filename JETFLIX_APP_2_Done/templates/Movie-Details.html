@@ -1,0 +1,182 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #MOVIE DETAIL
+      -->
+      {% if this_movie %}
+      <section class="movie-detail" >
+        <div class="container">
+
+          <figure class="movie-detail-banner">
+
+            <img src="{{this_movie[0][7]}}" alt="movies_thumbnil">
+
+            <!-- <button class="play-btn">
+              <a href="{{this_movie[0][8]}}"><ion-icon name="play-circle-outline"></ion-icon></a>
+            </button> -->
+
+          </figure>
+
+          <div class="movie-detail-content">
+
+            <p class="detail-subtitle">New Episodes</p>
+
+            <h1 class="h1 detail-title">
+              {{this_movie[0][1]}}
+            </h1>
+
+            <div class="meta-wrapper">
+
+              <div class="badge-wrapper">
+                <a href=" {{this_movie[0][8]}}"><div class="badge badge-fill"> Prime Videos </div></a>
+
+                <div class="badge badge-outline">HD</div>
+              </div>
+
+              <div class="ganre-wrapper">
+                <a>{{this_movie[0][4]}}</a>
+              </div>
+
+              <div class="date-time">
+
+                <div>
+                  <ion-icon name="calendar-outline"></ion-icon>
+
+                  <time datetime="2021">{{this_movie[0][5]}}</time>
+                </div>
+               
+              </div>
+
+            </div>
+
+            <p class="storyline">
+              {{this_movie[0][2]}}
+            </p>
+
+            <div class="details-actions">
+
+              
+
+              <div class="title-wrapper">
+                <p class="title">Prime Video</p>
+
+                <p class="text">Streaming Channels</p>
+              </div>
+
+              <button class="btn btn-primary">
+                <ion-icon name="play"></ion-icon>
+                <a href=" {{this_movie[0][8]}}"> <span style="color: wheat;">Watch Now</span></a>
+               
+              </button>
+
+            </div>
+
+            <form action="/save_movie" method="POST" class="download-btn"> 
+              <input type="hidden" value="{{this_movie[0][1]}}" name="save_title">
+              <input type="hidden" value="{{this_movie[0][4]}}" name="save_genres">
+              <button type="submit">                
+                <ion-icon name="download-outline"></ion-icon>
+              </button>
+              
+            </form>
+
+           
+
+          </div>
+
+        </div>
+      </section>
+
+
+
+
+
+      <!-- 
+        - #TV SERIES
+      -->
+
+      <section class="tv-series">
+        <div class="container">
+
+          <p class="section-subtitle">Best TV Series</p>
+
+          <h2 class="h2 section-title">World Best TV Series</h2>
+
+          <ul class="movies-list">
+
+            {% for i in data[0:4] %}
+            <li>
+              <div class="movie-card">
+
+
+
+                <form action="/Movie_Details_Page" method="POST">
+                  <button type="submit">
+                    <<figure class="card-banner">
+                      <img src="{{i['thombnil_url']}}" alt="poster">
+                    </figure>
+                    <input type="hidden" value="{{i['title']}}" name="find_movie_details">
+                  </button>
+                </form>
+                
+
+                <div class="title-wrapper">
+                  <form action="/Movie_Details_Page" method="POST">
+                    <button type="submit">
+                      <h3 class="card-title">{{i['title']}}</h3>
+                    <input type="hidden" value="{{i['title']}}" name="find_movie_details">
+                  </button>
+                  </form>
+                   
+                 
+
+                  <time datetime="2022">{{i['Released_date']}}</time>
+                </div>
+
+                <div class="card-meta">
+                  <a href="{{i['webpage_url']}}"><div class="badge badge-outline">Prime Videos</div></a>
+
+                  
+
+                  <div class="rating">
+                    <ion-icon name="star"></ion-icon>
+
+                    <data>{{i['Imdb_rating']}}</data>
+                  </div>
+                </div>
+
+              </div>
+            </li>
+            {% endfor %}
+
+            
+
+           
+          </ul>
+
+        </div>
+      </section>
+      {% else %}
+      <section class="tv-series">
+        <div class="container">
+          <h2 class="section-subtitle" style="font-size: 20px;"> Oops Somthing Problem.... </h2>
+        </div>
+      </section>
+
+      
+      {% endif %}
+
+    </article>
+  </main>
+
+  
+
+
+
+  {% endblock %}
