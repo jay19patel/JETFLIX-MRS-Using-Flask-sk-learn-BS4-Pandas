@@ -140,9 +140,12 @@ def HomePage():
             if request.method == "POST":
                 search_text = request.form["M_name"]
                 this_movie = Data_analysis.this_movie(search_text)
-                top5_datas = Data_analysis.find_by_name(search_text)
-                print(f"finding..{search_text}")
-                return render_template('Home.html',user=name,subs=checkbox,data=top5_datas,Gen_data=Gen_data,this_movie = this_movie)
+                try:
+                    top5_datas = Data_analysis.find_by_name(search_text)
+                    print(f"finding..{search_text}")
+                    return render_template('Home.html',user=name,subs=checkbox,data=top5_datas,Gen_data=Gen_data,this_movie = this_movie)
+                except:
+                        flash(" Movie Not Found ")
             return render_template('Home.html',user=name,subs=checkbox,Gen_data=Gen_data)
     return render_template('Home.html')
 
