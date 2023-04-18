@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <section>
+        <div class="container-fluid">
+            <div class="item_frame_home">
+                <h1 class="text-center"> Title IS Here </h1>
+            </div>  
+            <div class="nav_bar_course">
+                <hr>
+                <a href=""><button type="button" class="btn btn-success">ACTION  </button></a>
+                <a href=""><button type="button" class="btn btn-success">ANIMATION</button></a>
+                <a href=""><button type="button" class="btn btn-success">COMEDY </button></a>
+                <a href=""><button type="button" class="btn btn-success">CRIME</button></a>
+                <a href=""><button type="button" class="btn btn-success">HORROR </button></a>
+                <a href=""><button type="button" class="btn btn-success">ROMANCE </button></a>
+                <a href=""><button type="button" class="btn btn-success">SCIENCE FICTION</button></a>
+                <a href=""><button type="button" class="btn btn-success">EXPERIMENTAL </button></a>
+                <hr>
+            </div>  
+        </div> 
+    </section>
+    <section>
+        <form action="/" method="POST">
+            <input type="text" placeholder="Enter Movies Name Here :" name="M_name">
+            <button type="submit"> Find </button>
+        </form>
+    </section>
+
+    <section>
+        <div class="text-center"><h5> Similer Movies </h5></div>
+        <hr>
+        {% for i in data %}
+        <p>{{i}}</p>
+        {% endfor %}
+
+    </section>
+{% endblock %}

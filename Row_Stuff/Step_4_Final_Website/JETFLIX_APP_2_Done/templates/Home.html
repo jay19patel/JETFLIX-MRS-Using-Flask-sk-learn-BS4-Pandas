@@ -1,0 +1,87 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+""
+<!-- ---------------------Search ----------------------- -->
+{% if this_movie %}
+<section>
+    <div class="home_title">
+      <h1> Search Movies</h1>  
+  </div>
+  <div class="movie_data_box">
+        <div class="left_side">
+            <img src="{{this_movie[0][7]}}" alt="Image 1" >
+            <form action="/save_movie" method="POST">
+              <input type="hidden" value="{{this_movie[0][1]}}" name="save_title">
+              <input type="hidden" value="{{this_movie[0][5]}}" name="save_genres">
+              <button type="submit">Save latter</button>
+            </form>
+
+        </div>
+        <div class="right_side">
+            <h1 style="text-align: center;"> Movie Name  : {{this_movie[0][1]}}</h1>
+            <h3 style="text-align: center;"> Movie disciption  :{{this_movie[0][2]}}</h3>
+            <h3 style="text-align: center;"> Movie Imdb_rating  : {{this_movie[0][4]}}</h3>
+            <h3 style="text-align: center;"> Movie genres  : {{this_movie[0][5]}}</h3>
+            <h3 style="text-align: center;"> Movie webpage_url  : {{this_movie[0][8]}}</h3>
+            <h3 style="text-align: center;"> Movie Released_date  : {{this_movie[0][6]}}</h3>
+        </div>
+  </div>
+
+
+    <div class="image-container">
+      {% for i in data[1:] %}
+      <div class="image-card">
+        <img src="{{i['thombnil_url']}}" alt="Image 1">
+        <div class="overlay">
+          <h2>{{i['title']}}</h2>
+          <!-- <p>{{i}}</p> -->
+          <form action="/" method="POST">
+            <input type="hidden" value="{{i['title']}}" name="M_name">        
+            <button type="submit">Get</button>
+          </form>
+        </div>
+      </div>
+      {% endfor %}  
+    </div>
+
+</section>
+{% endif %}
+
+<!-- ----------------------------------------- -->
+
+<!-- ---------------------Best Genra 2023 ----------------------- -->
+
+<section>
+    <div class="home_title">
+        <h1> Best Genra 2023</h1>
+    </div>
+    {% if subs %}
+    <div class="container_home_card">
+
+        {% for i in subs %}
+        <div class="card">
+          <div class="card-images">
+            {% for gd in Gen_data %}            
+            <img src="{{gd}}" alt="Image 1">
+            {% endfor %}
+          </div>
+          <div class="card-buttons">
+            <button class="left-button"><<</button>
+            <button class="right-button">>></button>
+            <h1 class="card_tilte"> {{i}}</h1>
+          </div>
+        </div>
+        {% else %} 
+          <div>
+            <h3 style="text-align: center;padding-top: 50px;"><a href="/">Subscribe any Category</a></h3>
+          </div> 
+        {% endfor %}
+
+      </div>        
+    {% endif %}
+  </section>
+
+<!-- ----------------------------------------- -->
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<section>
+    <div class="my_log-reg_page">
+        <div>
+            <h1> Dash Bord ADD DATAS  </h1>
+        </div>
+        <div class="log-reg_container">
+
+        <form action="/my_dashbord" method="POST">
+            <div>
+                <input type="text" placeholder="Enter Movies_Index " autocomplete="off" name="Movies_Index">
+                <input type="text" placeholder="Enter Movies_Name " name="Movies_Name">   
+                <input type="text" placeholder="Enter Movies_Image " name="Movies_Image">    
+                <input type="text" placeholder="Movies_Trailer " name="Movies_Trailer">
+                <input type="text" placeholder="Movies_Tagline " name="Movies_Tagline">             
+                <input type="text" placeholder="Movies_Small_Description " name="Movies_Small_Description">             
+            </div>
+            <button type="submit"> Send Data </button>
+            <br><br>
+        </form>
+    </div>
+
+    </div>
+</section>
+
+{% endblock content %}

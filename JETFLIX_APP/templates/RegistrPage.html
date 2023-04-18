@@ -1,0 +1,73 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<main>
+    <article>
+
+
+
+      <!-- 
+        - #SERVICE
+      -->
+
+      <section class="log_reg">
+        <div class="container">
+
+          
+        <div class="log_reg-content">
+            <h2 class="h2 log_reg-title ">Registration  Here </h2>
+            <form action="/Registration_Page" method="POST">
+            <div>
+                <input type="text" name="my_name" required placeholder=" Enter Your Name  Here" class="input-field">
+                <input type="text" name="my_email" required placeholder=" Enter Your Email ID  Here" class="input-field">
+                <input type="text" name="my_phone" required placeholder=" Enter Your Phone Number Here" class="input-field">
+                <input type="text" name="my_psw1" required placeholder=" Enter Password Here" class="input-field"> 
+                <input type="text" name="my_psw2" required placeholder=" Enter Password Again Here" class="input-field"> 
+                <div class="checkbox-field">
+                    <div class="checkbox">
+                      <input type="checkbox" id="option1" name="my-checkbox" value="Action and adventure" >
+                      <label for="option1">Action and adventure</label>
+                    </div>
+                    <div class="checkbox" >
+                      <input type="checkbox" id="option2" name="my-checkbox" value="Anime">
+                      <label for="option2">Anime</label>
+                    </div>
+                    <div class="checkbox" >
+                      <input type="checkbox"  id="option3"name="my-checkbox" value="Comedy">
+                      <label for="option3">Comedy</label>
+                    </div>  
+                    <div class="checkbox" >
+                      <input type="checkbox" id="option4" name="my-checkbox" value="Drama">
+                      <label for="option4">Drama</label>
+                    </div>    
+                    <div class="checkbox" >
+                      <input type="checkbox"  id="option5" name="my-checkbox" value="Horror">
+                      <label for="option5">Horror</label>
+                    </div>
+                    <div class="checkbox" >
+                      <input type="checkbox"  id="option6" name="my-checkbox" value="Kids">
+                      <label for="option6">Kids</label>
+                    </div>
+                    <div class="checkbox" >
+                      <input type="checkbox" id="option7" name="my-checkbox" value="Romance">
+                      <label for="option7">Romance</label>
+                    </div>
+                    <div class="checkbox" >
+                      <input type="checkbox" id="option8" name="my-checkbox" value="Mystery and Thrillers">
+                      <label for="option8">Mystery and Thrillers</label>
+                    </div>  
+                </div>
+                <button type="submit" class="log_reg-form-btn"> Register </button>
+            </form>
+            <p>I Have alredy Account <a href="/Login_Page"> Login Here</a></p>
+        </div>
+
+        </div>
+      </section>
+
+    </article>
+</main>
+
+
+{% endblock content %}

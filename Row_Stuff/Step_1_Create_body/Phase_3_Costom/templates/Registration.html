@@ -1,0 +1,36 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<section>
+    <div class="my_log-reg_page">
+        <div>
+            <h1> Registration Here </h1>
+        </div>
+        <div class="log-reg_container">
+        <form action="/Registration_Page" method="POST">
+            <div>
+                <input type="text" placeholder="Enter Your Name " autocomplete="off" name="my_name">
+                <br>      
+                <input type="text" placeholder="Create  Username " autocomplete="off" name="my_username">
+                <br>
+                <input type="text" placeholder="Enter Your Email " autocomplete="off" name="my_email">
+                <br>
+                <input type="text" placeholder="Enter Your Phone No. " autocomplete="off" name="my_phone">
+                <br>
+                <input type="text" placeholder="Create New  Password  " autocomplete="off" name="my_psw1">
+                <br>
+                <input type="text" placeholder="Re Enter above Password " autocomplete="off"name="my_psw2">
+
+            </div>
+            <button type="submit"> Register  </button>
+        </form>
+            <br>
+            <br>
+
+        </div>
+
+    </div>
+</section>
+
+{% endblock content %}

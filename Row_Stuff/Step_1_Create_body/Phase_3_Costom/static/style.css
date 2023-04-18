@@ -1,0 +1,241 @@
+/* ---------------------------------------- */
+/* HOME PAGE */
+/* ---------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+*{
+    font-family: 'Bebas Neue', cursive;
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    background-color: #ffffff;
+    padding: 0 20px;
+  }
+    
+  .login a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #333;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+.home_title{
+  margin-top: 1%;
+  margin-bottom: 1%;
+  font-size: 30px;
+    text-align: center;
+}
+
+
+
+/* ---------------------------------------- */
+
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  input[type="text"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px 0 0 5px;
+    width: 300px;
+    background: #3b3b3b3b;
+  }
+  
+  button[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    background-color: #07c0a1;
+    color: white;
+    cursor: pointer;
+  }
+
+  
+  /* ------------------------------------------- */
+.container_home_card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  .card {
+    width: 300px;
+    height: 400px;
+    border: 1px solid black;
+    margin: 0 20px;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .card-images {
+    display: flex;
+    width: 900px;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .card-images img {
+    width: 300px;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  .card-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .left-button,
+  .right-button {
+    align-items: center;
+    padding: 10px 20px;
+    border: 1px solid white;
+    background-color: transparent;
+    /* background-color: rgba(0, 204, 255, 0.233); */
+    color: white;
+    cursor: pointer;
+  }
+  
+  .left-button {
+    margin-right: 20px;
+    left: -100px;
+  }
+  
+  .right-button {
+    margin-right: 20px;
+    right: -100px;
+  }
+  
+  .right-button:hover,
+  .left-button:hover {
+    color: rgb(0, 0, 0);
+  }
+
+
+  .card_tilte{
+    color: wheat;
+    border: none;
+    font-size: 50px;
+    margin: 5px;
+    text-align: center;     
+  }
+  .card-buttons a{
+    text-decoration: none;
+  }
+
+  
+  button {
+    padding: 10px 20px;
+    border: none;
+    background-color: red;
+    color: white;
+    cursor: pointer;
+  }
+  
+/* ---------------------------------------- */
+/* LOGIN REGISTRATION PAGE */
+/* ---------------------------------------- */
+
+.my_log-reg_page{
+  margin: 1%;
+ text-align: center;
+ font-size: 30px;
+}
+.my_log-reg_page input[type="text"] {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  background: #6363632a;
+  border-radius: 5px 0 0 5px;
+  width: 300px;
+  font-size: 20px;
+}
+
+
+.my_log-reg_page button[type="submit"] {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: #07c0a1;
+  color: white;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/* _______ Footer  */
+footer{
+  background: #000;
+  color: white;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+
+
+/* ================ */
+
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+
+.image-card {
+  position: relative;
+  margin-right: 20px;
+}
+
+img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.overlay:hover {
+  opacity: 1;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+button {
+  background-color: white;
+  color: black;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}

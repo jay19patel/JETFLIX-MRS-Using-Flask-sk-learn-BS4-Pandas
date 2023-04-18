@@ -1,0 +1,43 @@
+.image-container {
+    display: flex;
+  }
+  
+  .image-card {
+    position: relative;
+    margin-right: 20px;
+  }
+  
+  img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  .overlay:hover {
+    opacity: 1;
+  }
+  
+  h2 {
+    margin-top: 0;
+  }
+  
+  button {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+  }
+  

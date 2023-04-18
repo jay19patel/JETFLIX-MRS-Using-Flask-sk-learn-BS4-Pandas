@@ -1,0 +1,44 @@
+<h1> JETFLIX WEBSITE </h1>
+
+<a href="/my_movie"> Find movies data </a>
+<div>
+     <form action="/search_me" method="POST">
+        <input type="text" name="search_text" placeholder="Search Here ">
+        <button type="submit">Search</button>
+     </form>
+</div>
+
+
+<h1> Find Using Genras </h1>
+<a href="/action"><button>Action</button></a>
+<a href="/adventure"><button>Adventure</button></a>
+<a href="/animation"><button>Animation</button></a>
+<a href=""><button>Crime</button></a>
+<a href=""><button>Family</button></a>
+<a href=""><button>Mystrey</button></a>
+<a href=""><button>Romance</button></a>
+<a href=""><button>Horror</button></a>
+<a href=""><button>Sci-Fi</button></a>
+<a href=""><button>Wars</button></a>
+<a href=""><button>Thriller</button></a>
+
+
+<hr><h2>{{title}}</h2><hr>
+{% for m in movies %}
+<h3> Movie name : {{m[1]}}</h3>
+<span> Rating : {{m[2]}}</span>
+<hr>
+{% endfor %}
+
+<h1> Recomanded Movies </h1>
+{% if data %}
+{% for m in data %}
+<h3> Movie name : {{m}}</h3>
+<hr>
+{% endfor %}
+
+{% else %}
+
+<h5> Search somthing </h5>
+
+{% endif %}

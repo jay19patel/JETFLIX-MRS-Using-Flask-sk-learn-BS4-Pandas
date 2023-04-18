@@ -1,0 +1,185 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<!-- ---------------------Search ----------------------- -->
+
+<main>
+  <article>
+
+    <!-- 
+      - #Search  Baki se 
+    -->
+    {% if this_movie %}
+    <section class="upcoming">
+      <div class="container">
+
+        <div class="flex-wrapper">
+
+          <div class="title-wrapper">
+            <h2 class="h2 section-title">Search Results</h2>
+          </div>
+        </div>
+
+        <ul class="movies-list  has-scrollbar">
+
+          {% for i in data[0:4] %}
+          <li>
+            <div class="movie-card">
+
+              <form action="/Movie_Details_Page" method="POST">
+                <button type="submit">
+                  <figure class="card-banner">
+                    <img src="{{i['thombnil_url']}}" alt="The Northman movie poster">
+                  </figure>
+                  <input type="hidden" value="{{i['title']}}" name="find_movie_details">
+                </button>
+              </form>
+
+              <div class="title-wrapper">
+                <form action="/Movie_Details_Page" method="POST">
+                  <button type="submit">
+                    <h3 class="card-title">{{i['title']}}</h3>
+                  </button>
+                </form>
+                
+
+                <time >{{i['Released_date']}}</time>
+              </div>
+
+              <div class="card-meta">
+                <a href="{{i['webpage_url']}}"><div class="badge badge-outline">Prime Videos</div></a>               
+
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+
+                  <data>{{i['Imdb_rating']}}</data>
+                </div>
+              </div>
+
+            </div>
+          </li>
+          {% endfor %}
+        </ul>
+
+      </div>
+    </section>
+    {% endif %}
+
+
+
+    <!-- 
+      - #HERO
+    -->
+
+    <section class="hero">
+      <div class="container">
+
+        <div class="hero-content">
+
+          <p class="hero-subtitle">JETFLIX</p>
+
+          <h1 class="h1 hero-title">
+            Unlimited <strong>Movie</strong>, TVs Shows, & More.
+          </h1>
+
+          <div class="meta-wrapper">
+
+            <div class="badge-wrapper">
+              <a href="https://www.primevideo.com/offers/nonprimehomepage/ref=dv_web_force_root"><div class="badge badge-outline">Prime Videos</div></a>
+            </div>
+
+            
+
+          </div>
+
+          <button class="btn btn-primary">
+            <ion-icon name="play"></ion-icon>
+            <a href="https://www.primevideo.com/offers/nonprimehomepage/ref=dv_web_force_root"><div class="badge badge-outline"><span>Watch now</span></div></a>
+           
+          </button>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- 
+      - #TOP RATED
+    -->
+
+    <section class="top-rated">
+      <div class="container">
+        <h2 class="h2 section-title">Top Rated Movies</h2>
+
+        {% if subs %}
+        <ul class="filter-list">
+          {% for i in subs %}
+          <li>
+            <h1 class="filter-btn" >{{i}}</h1>
+          </li>
+          {% endfor %}
+
+        </ul>
+        {% else %} 
+        <ul class="filter-list">
+          <li>
+            <button class="filter-btn"> Not Subscrine Any Chennels </button>
+          </li>
+
+        </ul>
+        {% endif %}
+
+        <ul class="movies-list">
+
+          {% for gd in Gen_data %} 
+          <li>
+            <div class="movie-card">
+
+              <form action="/Movie_Details_Page" method="POST">
+                <button type="submit">
+                  <figure class="card-banner">
+                    <img src="{{gd[7]}}" alt="movies_name">
+                  </figure>
+                  <input type="hidden" value="{{gd[1]}}" name="find_movie_details">
+                </button>
+              </form>     
+              
+               
+
+              <div class="title-wrapper">
+                <form action="/Movie_Details_Page" method="POST">
+                  <button type="submit">
+                      <h3 class="card-title">{{gd[1]}}</h3>
+                    <input type="hidden" value="{{gd[1]}}" name="find_movie_details">
+                  </button>
+                </form> 
+
+                <time datetime="2022">{{gd[5]}}</time>
+              </div>
+
+              <div class="card-meta">
+                <a href="{{gd[8]}}"><div class="badge badge-outline">Prime Videos</div></a>
+
+                
+
+                <div class="rating">
+                  <ion-icon name="star"></ion-icon>
+
+                  <data>{{gd[3]}}</data>
+                </div>
+              </div>
+
+            </div>
+          </li>
+          {% endfor %}
+
+          
+
+        </ul>
+
+      </div>
+    </section>
+
+{% endblock %}

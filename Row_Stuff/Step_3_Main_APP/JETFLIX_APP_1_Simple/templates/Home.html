@@ -1,0 +1,47 @@
+<h1> JETFLIX WEBSITE </h1>
+
+<a href="/my_profile"> My Profile  </a> <br>
+<a href="/Logout"> Logout  </a> <br>
+<a href="/Login_Page"> Login  </a> <br>
+<a href="/Registration_Page"> Registration </a> <br>
+User Name : {{user_name}}
+<div>
+     <form action="/search_me" method="POST">
+        <input type="text" name="search_text" placeholder="Search Here ">
+        <button type="submit">Search</button>
+     </form>
+</div>
+
+
+{% if data %}
+<br>
+<h1> Search Result </h1>
+{% for m in data %}
+<h3> Movie name : {{m['title']}}</h3>
+<hr>
+{% endfor %}
+<br>
+{% endif %}
+<!-- ----------------------------------------- -->
+<h1> Your Subscribes  </h1>
+{% if subs %}
+{% for i in subs %}
+<button>{{i}}</button>
+{% endfor %}
+{% else %}
+<h5> Subscribe your Categories </h5>
+{% endif %}
+
+<!-- 
+<h1> Recomanded Movies </h1>
+{% if data %}
+{% for m in data %}
+<h3> Movie name : {{m['title']}}</h3>
+<hr>
+{% endfor %}
+
+{% else %}
+
+<h5> Search somthing </h5>
+
+{% endif %} -->

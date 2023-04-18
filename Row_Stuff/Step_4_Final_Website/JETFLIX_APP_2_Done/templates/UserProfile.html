@@ -1,0 +1,34 @@
+{% extends 'Base.html' %}
+
+{% block content %}
+
+<section class="user_profile" >
+    <h1> My Profile </h1>
+
+    <div class="my_datas" style="align-items: center;">
+        <div>
+            <label for="Name"> Name </label>
+            <input type="text" value="{{user_data['name']}}">
+        </div>
+        <br>
+        <div>
+            <label for="Name"> email </label>
+            <input type="text" value="{{user_data['email']}}">
+        </div>
+        <br>
+        <div>
+            <label for="Name"> phone </label>
+            <input type="text" value="{{user_data['phone']}}">
+        </div>
+        <br>
+        <div>
+            <label for="Name"> subscribes  </label>
+            <input type="text" value="{{user_data['checkbox']}}">
+        </div>
+    </div>
+</section>
+
+{% endblock content %}
+
+
+

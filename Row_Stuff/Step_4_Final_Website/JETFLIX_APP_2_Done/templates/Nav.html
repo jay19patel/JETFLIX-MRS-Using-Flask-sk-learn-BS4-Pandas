@@ -1,0 +1,29 @@
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    {% for message in messages %}
+      <div class="flash_message"><h3>{{ message }}</h3></div>
+    {% endfor %}
+  {% endif %}
+{% endwith %}
+
+<header>
+    <div class="logo">
+      <a href="/"><h1> J E T  F L I X </h1></a>
+    </div>
+
+    <div class="search-container">
+      <form action="/" method="POST">
+        <input type="text" placeholder="Search..." name="M_name">
+        <button type="submit">Search</button>
+      </form>
+      </div>
+    <div class="login">
+      {% if user %}
+        <a href="/Profile_Page" style="background-color: #07c0a1;">{{user}}</a>
+        <a href="/Log_out">Log Out</a>
+        {% else %}
+        <a href="/Login_Page">Login</a>
+        <a href="/Registration_Page">Registration</a>
+      {% endif %}
+    </div>
+</header>
