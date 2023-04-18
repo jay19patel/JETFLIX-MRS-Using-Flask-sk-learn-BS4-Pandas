@@ -52,7 +52,7 @@
 ## Movie Sugation System
 ![Movie Flow Chat](https://user-images.githubusercontent.com/107461719/232738363-fedf109a-c52b-4c80-a0eb-7e79b02d6230.jpeg)
 
-## Movies Data Srapin
+## Movies Data Scrapin
 ![Scraping Data](https://user-images.githubusercontent.com/107461719/232738605-edc53c93-14dd-4242-981c-386e211a4b43.jpeg)
 
 
@@ -60,7 +60,7 @@
 # First Consol App:
 ![first_consol_app](https://user-images.githubusercontent.com/107461719/232738711-7985d32e-7ee9-4d52-9908-0ec767e69f5d.JPG)
 
-#Basic Simpel Website Only names :
+# Basic Simpel Website Only names :
 ![Base_simple_jetflix_app](https://user-images.githubusercontent.com/107461719/232738845-5410c06d-9ece-47bc-a217-f617a50d3574.JPG)
 
 # final Websiet Result :
